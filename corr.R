@@ -12,11 +12,15 @@ corr <- function(directory, threshold = 0) {
   id_nobs<-complete("specdata")
   test_index<-id_nobs$nobs>=threshold
   new_frame<-id_nobs[test_index,]
+ # if(length(test_index[test_index])==0){
+  #  return(numeric())
+  #}
+  
   for(i in new_frame$id){
     filename<-paste(i,'csv',sep=".")
     file_dir<-paste(directory,filename,sep='/')
     data<-read.csv(file_dir)
-    temp<-cor(data$sulfate,data$nitrate,"complete.obs")
+    temp<-cor(data$sulfate,data$nitrate,"na.or.complete")
     cor_num<-append(cor_num,temp)
   }
   cor_num

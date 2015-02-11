@@ -1,6 +1,4 @@
 
-
-
 # part 1
 pollutantmean <- function(directory, pollutant, id = 1:332) {
   ## 'directory' is a character vector of length 1 indicating
@@ -30,3 +28,13 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   total/n
 }
 
+# test 
+#pollutantmean("specdata", "sulfate", 1:10)
+## [1] 4.064
+#pollutantmean("specdata", "nitrate", 70:72)
+## [1] 1.706
+#pollutantmean("specdata", "nitrate", 23)
+## [1] 1.281
+
+
+  
